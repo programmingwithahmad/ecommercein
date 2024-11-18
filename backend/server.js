@@ -37,14 +37,14 @@ app.use('/cx', assistantRoute)
 
  
 //rest api            
-app.get('/', (req, res) => {
+app.get('/hy', (req, res) => {
     res.send('Welcome to ecommerce');
 })  
 
 
 //static file
-app.get('*', (req, res) => {
-    app.use(express.static(path.resolve(__dirname, 'frontend', 'dist')))
+app.get('/', (req, res) => {
+    app.use(express.static(path.join(__dirname, 'frontend', 'dist')))
     res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'))
 })
 
